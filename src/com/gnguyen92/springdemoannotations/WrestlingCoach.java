@@ -25,7 +25,7 @@ public class WrestlingCoach implements Coach {
 	// @Autowire the SkillLevel dependency
 	// @Qualifier specifies which SkillLevel interface implementation this class will use
 	@Autowired
-	@Qualifier("proSkillLevel")
+	@Qualifier("fileRandomSkill")
 	public void setSkillLevel(SkillLevel currentSkill){
 		System.out.println(">> WrestlingCoach: inside @Autowired @Qualifier Setter setSkillLevel()");
 		System.out.println("Name: " + name);

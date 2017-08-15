@@ -82,6 +82,16 @@ public class AnnotationDemo {
  *  		this.interfaceObject = interfaceObject;
  *  	}
  *  
+ *  ------------- values.properties Field Injections -------------------------------------
+ *  
+ *  1)  Create a properties file in src folder -> file contains key=value pairs
+ *  
+ *  2)  Load the properties file into xml config file
+ *  	<context:property-placeholder location="classpath:fileName.properties" />
+ *  
+ *  3)  In SportCoach class, declare instance variables
+ *  
+ *  4)  Above variable declaration, add @Value("${keyName}")
  *  
  *  
  */

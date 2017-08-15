@@ -13,6 +13,9 @@
 	<!-- Load values.properties file for properties injections using java annotations -->
 	<context:property-placeholder location="classpath:values.properties" />
 	
+	<!-- Load skillLevel.properties file for properties injection into CurrentSkillLevel -->
+	<context:property-placeholder location="classpath:skillLevel.properties" />
+	
 </beans>
 
 
