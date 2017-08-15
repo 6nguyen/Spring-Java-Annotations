@@ -10,6 +10,9 @@
 	<!-- Add entry to enable component-scanning (Spring java annotations) -->
 	<context:component-scan base-package="com.gnguyen92.springdemoannotations" />
 	
+	<!-- Load values.properties file for properties injections using java annotations -->
+	<context:property-placeholder location="classpath:values.properties" />
+	
 </beans>
 
 

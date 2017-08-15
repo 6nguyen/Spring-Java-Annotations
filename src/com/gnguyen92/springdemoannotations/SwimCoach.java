@@ -20,7 +20,7 @@ public class SwimCoach implements Coach {
 	}
 	
 	public String getDailyWorkout() {
-		return "Breast stroke, backstroke, and 30 laps of freestyle.";
+		return "Breast stroke, back stroke, and 30 laps of freestyle.";
 	}
 
 	public String getSkillLevel() {

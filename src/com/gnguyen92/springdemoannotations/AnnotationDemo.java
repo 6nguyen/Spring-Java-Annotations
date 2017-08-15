@@ -1,6 +1,5 @@
 package com.gnguyen92.springdemoannotations;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class AnnotationDemo {

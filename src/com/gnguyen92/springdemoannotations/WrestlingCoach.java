@@ -2,12 +2,19 @@ package com.gnguyen92.springdemoannotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class WrestlingCoach implements Coach {
 
 	private SkillLevel currentSkill;
+	
+	// variables for values.properties file injections
+	@Value("${height}")
+	private int heightInInches;
+	@Value("${name}")
+	private String name;
 	
 	// Set up a default constructor
 	public WrestlingCoach(){
@@ -21,6 +28,8 @@ public class WrestlingCoach implements Coach {
 	@Qualifier("proSkillLevel")
 	public void setSkillLevel(SkillLevel currentSkill){
 		System.out.println(">> WrestlingCoach: inside @Autowired @Qualifier Setter setSkillLevel()");
+		System.out.println("Name: " + name);
+		System.out.println("Height: " + heightInInches + "\" ");
 		this.currentSkill = currentSkill;
 	}
 	
