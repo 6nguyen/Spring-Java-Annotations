@@ -3,21 +3,21 @@ package com.gnguyen92.springdemoannotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+// add default component java annotation
+@Component
+public class SwimCoach implements Coach {
 
-// Add Spring java annotation with bean id
-@Component("theCoach")
-public class SoccerCoach implements Coach {
-
+	// declare SkillLevel instance variable
 	private SkillLevel currentSkill;
 	
 	// Configure dependency injection with Autowired annotation
 	@Autowired
-	public SoccerCoach(SkillLevel currentSkill) {
+	public SwimCoach(SkillLevel currentSkill){
 		this.currentSkill = currentSkill;
 	}
-
+	
 	public String getDailyWorkout() {
-		return "Penalty kicks and footwork is today's workout!";
+		return "Breast stroke, backstroke, and 30 laps of freestyle.";
 	}
 
 	public String getSkillLevel() {

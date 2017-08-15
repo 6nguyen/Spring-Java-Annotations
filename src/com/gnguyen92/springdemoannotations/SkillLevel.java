@@ -1,7 +1,6 @@
 package com.gnguyen92.springdemoannotations;
 
-public interface Coach {
-	
-	public String getDailyWorkout();
+public interface SkillLevel {
+
 	public String getSkillLevel();
 }

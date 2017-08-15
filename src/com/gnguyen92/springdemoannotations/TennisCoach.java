@@ -4,20 +4,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 
-// Add Spring java annotation with bean id
-@Component("theCoach")
-public class SoccerCoach implements Coach {
+// Add Java annotation, using the default bean id (Class name with first letter lowercase: tennisCoach
+@Component
+public class TennisCoach implements Coach {
 
 	private SkillLevel currentSkill;
 	
 	// Configure dependency injection with Autowired annotation
 	@Autowired
-	public SoccerCoach(SkillLevel currentSkill) {
+	public TennisCoach(SkillLevel currentSkill) {
 		this.currentSkill = currentSkill;
 	}
 
 	public String getDailyWorkout() {
-		return "Penalty kicks and footwork is today's workout!";
+		return "Backhands, serving, and volleying is on today's menu!";
 	}
 
 	public String getSkillLevel() {
