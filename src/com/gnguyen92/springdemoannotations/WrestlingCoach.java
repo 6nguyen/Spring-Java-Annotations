@@ -1,6 +1,7 @@
 package com.gnguyen92.springdemoannotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -13,11 +14,13 @@ public class WrestlingCoach implements Coach {
 		System.out.println(">> WrestlingCoach: inside default constructor.");
 	}
 	
-	// Create setter method for SkillLevel
+	// Create Setter injection for SkillLevel ********
 	// @Autowire the SkillLevel dependency
+	// @Qualifier specifies which SkillLevel interface implementation this class will use
 	@Autowired
+	@Qualifier("proSkillLevel")
 	public void setSkillLevel(SkillLevel currentSkill){
-		System.out.println(">> WrestlingCoach: inside @Autowired setSkillLevel()");
+		System.out.println(">> WrestlingCoach: inside @Autowired @Qualifier Setter setSkillLevel()");
 		this.currentSkill = currentSkill;
 	}
 	
@@ -26,6 +29,7 @@ public class WrestlingCoach implements Coach {
 	}
 
 	public String getSkillLevel() {
+		System.out.println(">> WrestlingCoach: inside getSkillLevel()");
 		return currentSkill.getSkillLevel();
 	}
 

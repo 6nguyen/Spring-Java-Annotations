@@ -1,6 +1,7 @@
 package com.gnguyen92.springdemoannotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 // add default component java annotation
@@ -10,9 +11,11 @@ public class SwimCoach implements Coach {
 	// declare SkillLevel instance variable
 	private SkillLevel currentSkill;
 	
-	// Configure dependency injection with Autowired annotation
+	// Configure dependency injection with Autowired annotation **********
+	// @Qualifier for constructor is added as an argument
 	@Autowired
-	public SwimCoach(SkillLevel currentSkill){
+	public SwimCoach(@Qualifier("injuryStatus")SkillLevel currentSkill){
+		System.out.println(">> SwimCoach: inside @Autowired @Qualifier default constructor.");
 		this.currentSkill = currentSkill;
 	}
 	
@@ -21,6 +24,7 @@ public class SwimCoach implements Coach {
 	}
 
 	public String getSkillLevel() {
+		System.out.println(">> SwimCoach: inside getSkillLevel()");
 		return currentSkill.getSkillLevel();
 	}
 

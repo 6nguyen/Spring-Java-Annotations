@@ -1,5 +1,6 @@
 package com.gnguyen92.springdemoannotations;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class AnnotationDemo {
@@ -10,13 +11,19 @@ public class AnnotationDemo {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		// retreive the bean
-		Coach myCoach = context.getBean("wrestlingCoach", Coach.class);
+		Coach myCoach = context.getBean("swimCoach", Coach.class);
+		Coach myCoach2 = context.getBean("wrestlingCoach", Coach.class);
 		
 		// call methods on the bean
-		System.out.println(myCoach.getDailyWorkout());
+		System.out.println("\nSwim: ");
+		System.out.println(myCoach.getDailyWorkout());		
 		
 		// call method to get current skill level
 		System.out.println(myCoach.getSkillLevel());
+		
+		System.out.println("\nWrestling: ");
+		System.out.println(myCoach2.getDailyWorkout());
+		System.out.println(myCoach2.getSkillLevel());
 		
 		// 	close the context
 		context.close();
@@ -48,10 +55,34 @@ public class AnnotationDemo {
  * 
  * 
  *  ---------- @Autowired Setter Injection ---------------------
- *  1)  Create new sports Coach class -> instantiate SkillLevel instance -> create default constructor 
+ *  
+ *  1)  Create WrestlingCoach class -> instantiate SkillLevel instance -> create default constructor 
  *  		-> implement inherited methods 
  *  
- *  2)  Create setter method in sports Coach for SkillLevel with @Autowired annotation
+ *  2)  Create setter method in WrestlingCoach for SkillLevel with @Autowired annotation
  *  
- *  3)  in AnnotationDemo -> in bean retrieval -> change bean id to new sports Coach class -> run
+ *  3)  in AnnotationDemo -> in bean retrieval -> change bean id to WrestlingCoach bean id -> run
+ *  
+ *  NOTE: @Autowired doesn't just work for setter methods, it works with any methods looking for SkillLevel
+ *  
+ *  
+ *  --------- @Autowired @Qualifier ------------------------------------
+ *  NOTE:  @Qualifier used to specificy which interface implementation we will use, when we have 
+ *  		more than one implementation of the interface.
+ *  		Any constructors used must have no args 
+ *  
+ *  	SETTER & FIELD INJECTIONS:
+ *  1)  In each class that implements Coach interface, add @Qualifier("bean_id_of_SkillLevel_implementation")
+ *  
+ *  2)  If the class contains a constructor, change it to a no-arg (default) constructor
+ *  
+ *  	CONSTRUCTOR INJECTIONS:
+ *  1)  Add @Qualifier("bean_id") inside the constructor args and set instance vars in constructor
+ *  
+ *  	public SwimCoach(@Qualifier("bean_id")Interface interfaceObject) {
+ *  		this.interfaceObject = interfaceObject;
+ *  	}
+ *  
+ *  
+ *  
  */
