@@ -24,3 +24,18 @@ public class AnnotationBeanScope {
 	}
 
 }
+
+/***************************** READ ME: INSTRUCTIONS ****************************************/
+/*
+ * 1)  Create new main app to test bean scope
+ * 
+ * 2)  load spring xml config -> retrieve bean -> call methods on bean -> close context
+ * 
+ * 3)  In SportCoach class, add @Scope("scope_level") under @Component, where scope_level is
+ * 		singleton, prototype, etc
+ * 
+ * 4)  In new main app, write method to check if two beans of same class share memory address
+ * 
+ * 
+ * 
+ */

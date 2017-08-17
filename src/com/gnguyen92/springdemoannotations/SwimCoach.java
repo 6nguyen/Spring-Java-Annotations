@@ -11,11 +11,15 @@ public class SwimCoach implements Coach {
 	// declare SkillLevel instance variable
 	private SkillLevel currentSkill;
 	
-	// Configure dependency injection with Autowired annotation **********
+	// Configure constructor dependency injection with @Autowired annotation **********
 	// @Qualifier for constructor is added as an argument
-	@Autowired
-	public SwimCoach(@Qualifier("injuryStatus")SkillLevel currentSkill){
-		System.out.println(">> SwimCoach: inside @Autowired @Qualifier default constructor.");
+//	@Autowired
+//	public SwimCoach(@Qualifier("fileRandomSkill")SkillLevel currentSkill){
+//		System.out.println(">> SwimCoach: inside @Autowired @Qualifier default constructor.");
+//		this.currentSkill = currentSkill;
+//	}
+
+	public SwimCoach(SkillLevel currentSkill) {
 		this.currentSkill = currentSkill;
 	}
 	

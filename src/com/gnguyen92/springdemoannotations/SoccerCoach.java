@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-
 // Add Spring java annotation with bean id
 @Component("theCoach")
 public class SoccerCoach implements Coach {
@@ -17,6 +16,7 @@ public class SoccerCoach implements Coach {
 		System.out.println(">> SoccerCoach: inside @Autowired @Qualifier default constructor");
 		this.currentSkill = currentSkill;
 	}
+	
 
 	public String getDailyWorkout() {
 		return "Penalty kicks and footwork is today's workout!";

@@ -1,5 +1,8 @@
 package com.gnguyen92.springdemoannotations;
 
+//import javax.annotation.PostConstruct;
+//import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,6 +23,19 @@ public class WrestlingCoach implements Coach {
 	public WrestlingCoach(){
 		System.out.println(">> WrestlingCoach: inside default constructor.");
 	}
+	
+//	// define init-method 
+//	@PostConstruct
+//	public void doStartup(){
+//		System.out.println(">> SoccerCoach: inside @PostConstruct doStartup()");
+//	}
+//	
+//	// define destroy-method
+//	@PreDestroy
+//	public void doDestruction(){
+//		System.out.println(">> SoccerCoach: inside @PreDestroy doDestruction()");
+//	}
+	
 	
 	// Create Setter injection for SkillLevel ********
 	// @Autowire the SkillLevel dependency

@@ -20,6 +20,7 @@ public class TennisCoach implements Coach {
 	public TennisCoach( ) {
 		System.out.println(">> TennisCoach: inside default constructor.");
 	}
+	
 
 	public String getDailyWorkout() {
 		return "Backhands, serving, and volleying is on today's menu!";
