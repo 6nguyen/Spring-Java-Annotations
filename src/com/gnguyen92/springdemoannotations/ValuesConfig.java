@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 // Add @Configuration annotation to tell Java this is a config file
 // Add @ComponentScan("package to scan")
-@Configuration
+//@Configuration
 @ComponentScan("com.gnguyen92.springdemoannotations")
 public class ValuesConfig {
 	
