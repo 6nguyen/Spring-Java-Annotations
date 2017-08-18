@@ -1,3 +1,8 @@
+/*
+*  @Autowired Constructor with special @Qualifier argument
+*  
+*/
+
 package com.gnguyen92.springdemoannotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +16,7 @@ public class SwimCoach implements Coach {
 	// declare SkillLevel instance variable
 	private SkillLevel currentSkill;
 	
-	// Configure constructor dependency injection with @Autowired annotation **********
+	// Configure constructor dependency injection with @Autowired annotation ***************
 	// @Qualifier for constructor is added as an argument
 	@Autowired
 	public SwimCoach(@Qualifier("fileRandomSkill")SkillLevel currentSkill){
@@ -19,10 +24,6 @@ public class SwimCoach implements Coach {
 		this.currentSkill = currentSkill;
 	}
 
-	// Configure constructor for ValuesConfig @Configuration class
-//	public SwimCoach(SkillLevel currentSkill) {
-//		this.currentSkill = currentSkill;
-//	}
 	
 	public String getDailyWorkout() {
 		return "Breast stroke, back stroke, and 30 laps of freestyle.";

@@ -1,3 +1,9 @@
+/* 
+ *  @Scope Bean scope and lifecycle demonstration
+ *  @Scope("prototype") creates two bean objects with different memory addresses
+ * 
+ * */
+
 package com.gnguyen92.springdemoannotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +26,6 @@ public class TennisCoach implements Coach {
 	public TennisCoach( ) {
 		System.out.println(">> TennisCoach: inside default constructor.");
 	}
-	
 
 	public String getDailyWorkout() {
 		return "Backhands, serving, and volleying is on today's menu!";

@@ -12,15 +12,15 @@ public class JavaConfigDemo {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("ValuesConfig.class");
 		
 		// retreive the bean
-		Coach myCoach = context.getBean("swimCoach", Coach.class);
-		Coach myCoach2 = context.getBean("wrestlingCoach", Coach.class);
+		//Coach myCoach = context.getBean("gymnasticsCoach", Coach.class);
+		WrestlingCoach myCoach2 = context.getBean("wrestlingCoach", WrestlingCoach.class);
 		
 		// call methods on the bean
-		System.out.println("\nSwim: ");
-		System.out.println(myCoach.getDailyWorkout());		
-		
-		// call method to get current skill level
-		System.out.println(myCoach.getSkillLevel());
+//		System.out.println("\nGym: ");
+//		System.out.println(myCoach.getDailyWorkout());		
+//		
+//		// call method to get current skill level
+//		System.out.println(myCoach.getSkillLevel());
 		
 		System.out.println("\nWrestling: ");
 		System.out.println(myCoach2.getDailyWorkout());

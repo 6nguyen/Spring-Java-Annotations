@@ -11,7 +11,7 @@ public class AnnotationDemo {
 		
 		// retreive the bean
 		Coach myCoach = context.getBean("swimCoach", Coach.class);
-		Coach myCoach2 = context.getBean("wrestlingCoach", Coach.class);
+		WrestlingCoach myCoach2 = context.getBean("wrestlingCoach", WrestlingCoach.class);
 		
 		// call methods on the bean
 		System.out.println("\nSwim: ");
@@ -23,6 +23,8 @@ public class AnnotationDemo {
 		System.out.println("\nWrestling: ");
 		System.out.println(myCoach2.getDailyWorkout());
 		System.out.println(myCoach2.getSkillLevel());
+		System.out.println("Name: " + myCoach2.getName());
+		System.out.println("Height: " + myCoach2.getHeightInInches() + "\" ");
 		
 		// 	close the context
 		context.close();
