@@ -23,7 +23,7 @@ public class WrestlingCoach implements Coach {
 	
 	// variables for values.properties file injections *********************************
 	@Value("${height}")
-	private int heightInInches;
+	private String heightInInches;
 	@Value("${name}")
 	private String name;
 	
@@ -68,11 +68,11 @@ public class WrestlingCoach implements Coach {
 
 	
 	// Getters and Setters to retrieve @Value instance variables
-	public int getHeightInInches() {
+	public String getHeightInInches() {
 		return heightInInches;
 	}
 
-	public void setHeightInInches(int heightInInches) {
+	public void setHeightInInches(String heightInInches) {
 		this.heightInInches = heightInInches;
 	}
 
